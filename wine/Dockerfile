@@ -26,7 +26,7 @@ RUN set -eux; \
 
 # https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/?C=N;O=D
 # https://www.winehq.org/news/
-ENV WINE_VERSION 5.0.3
+ENV WINE_VERSION 5.0.2
 
 RUN set -eux; \
 	{ \
@@ -36,6 +36,6 @@ RUN set -eux; \
 	} > /etc/apt/preferences.d/winehq.pref; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-		"winehq-staging=$WINE_VERSION~*" \
+		"winehq-stable=$WINE_VERSION~*" \
 	; \
 	rm -rf /var/lib/apt/lists/*
